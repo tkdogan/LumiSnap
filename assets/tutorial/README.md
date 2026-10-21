@@ -10,16 +10,25 @@ external image host or font is required.
 - `measurement-methods.svg`: spot luminance, vertical eye illuminance and horizontal workplane illuminance.
 - `processing-workflow.svg`: merge, lens correction, calibration, validation and analysis.
 - `sample-calibration.svg`: actual portrait capture with editable target annotations.
+- `meter-identification.svg`: recognizable Konica Minolta T-10A and LS-150
+  instrument drawings, their units, how to position them and their role in HDR work.
 
 Open an SVG directly in Illustrator or Inkscape. Labels are live Arial text;
 geometry consists of vector paths, shapes and named groups. The photograph in
 `sample-calibration.svg` is an embedded raster image; its markers and text are
 editable vectors. No text is outlined. All SVGs are self-contained.
-The same five SVGs are packaged in `lumisnap-editable-diagrams.zip` for download.
+The same six SVGs are packaged in `lumisnap-editable-diagrams.zip` for download.
 
 The optional generator is [`tools/build-tutorial-diagrams.py`](../../tools/build-tutorial-diagrams.py)
 (Python 3 with Pillow).
 Editing an SVG directly is sufficient; rerunning the generator replaces it.
+
+The meter silhouettes are original schematic drawings based on Konica Minolta's
+[T-10A](https://www.konicaminolta.com/instruments/download/catalog/light/pdf/t10a_catalog_eng.pdf)
+and [LS-150](https://sensing.konicaminolta.us/wp-content/uploads/ls150_catalog_eng_compressed.pdf)
+brochures. Standard configurations are shown, without optional adapters. Display
+readings are illustrative and are not paired measurements or a lux-to-cd/m²
+conversion. Manufacturer product photographs are not included in the site assets.
 
 ## Example photographs and provenance
 

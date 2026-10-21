@@ -139,7 +139,71 @@ for i,(label,px,py,value,material) in enumerate(targets):
 body += '</g><g id="teaching-notes">'+lines(600,713,["Supplied course notes: Oct. 5, 2026, 4:30 pm.","Photo EXIF: 4:45:53 pm; timing is unverified.","These readings illustrate target selection.","They are not a validated calibration for this frame."],21)
 body += text(55,890,"Source: 3X6A2043.JPG and the accompanying portrait measurement sheet. Marker positions are approximate.",21,MUTED)+'</g>'
 save("sample-calibration.svg","Annotated portrait example with supplied luminance readings","The supplied portrait sample is annotated with five approximate target regions: A 67, B 165, C 77, D 415 and E 65 cd/m². Course-note and photo timestamps differ, so the readings illustrate target selection rather than a validated calibration.",930,body)
-print("Wrote five editable SVG diagrams to", OUT)
+
+# 6. Recognizable instrument silhouettes, redrawn from the manufacturer's
+# brochures. These are explanatory vectors, not copied product photographs.
+body = text(44,54,"KNOW YOUR METERS / KONICA MINOLTA EXAMPLES",21,GREEN,"bold")
+body += rect(40,92,540,840,"white",LINE) + rect(620,92,540,840,"white",LINE)
+body += '<g id="illuminance-meter-labels">'
+body += text(68,141,"ILLUMINANCE METER",30,INK,"bold") + text(68,178,"Konica Minolta T-10A",23,MUTED)
+body += text(68,233,"lux (lx)",42,GREEN,"bold") + '</g>'
+body += '<g id="t10a-body">'
+body += rect(223,334,130,244,"#303938",INK,16)
+body += '<circle cx="288" cy="320" r="55" fill="#303938" stroke="#162d26" stroke-width="3"/>'
+body += '<circle cx="288" cy="320" r="42" fill="#1b2422" stroke="#56625d" stroke-width="2"/>'
+body += '<circle cx="288" cy="320" r="29" fill="#f7f9f3" stroke="#bdc8bf" stroke-width="2"/>'
+body += path("M 229 383 L 347 383", "#65736a", 2)
+body += rect(235,402,106,61,"#cbd8ba", "#111d17", 3)
+body += text(246,441,"500",30,INK) + text(317,450,"lx",16,INK)
+for x in (236,272,308):
+    body += rect(x,477,30,11,"#a8d0c6","#172a23",3)
+body += rect(235,508,106,35,"#26302b","#48594d",3)
+body += text(288,564,"T-10A",15,"#d8e4d8",anchor="middle") + '</g>'
+body += '<g id="t10a-callouts">'
+body += lines(68,283,["White diffuser", "collects light"],20,INK,27)
+body += path("M 197 299 L 236 299 L 260 313",GREEN,2)
+body += text(68,433,"Read lux (lx)",20,INK) + path("M 185 430 L 232 430",GREEN,2)
+body += text(375,394,"No viewfinder",20,INK)
+body += path("M 374 406 L 351 419",GREEN,2) + '</g>'
+body += '<g id="luminance-meter-labels">'
+body += text(648,141,"LUMINANCE METER",30,INK,"bold") + text(648,178,"Konica Minolta LS-150",23,MUTED)
+body += text(648,233,"cd/m²",42,GREEN,"bold") + '</g>'
+body += '<g id="ls150-body">'
+body += '<path d="M 803 323 H 951 Q 982 323 982 351 V 419 Q 982 445 956 448 L 919 451 L 902 562 H 850 L 862 452 H 810 Q 786 452 786 428 V 348 Q 786 323 803 323 Z" fill="#303938" stroke="#162d26" stroke-width="3"/>'
+body += rect(762,361,25,43,"#1a2320",INK,5)
+body += rect(981,338,62,96,"#202b25",INK,4)
+body += rect(1015,338,28,96,"#455149",INK,3)
+for x in range(1020,1041,5):
+    body += path(f"M {x} 343 L {x} 429","#a6b4a9",1)
+body += '<ellipse cx="1045" cy="386" rx="11" ry="47" fill="#1b2822" stroke="#162d26" stroke-width="3"/>'
+body += '<ellipse cx="1047" cy="386" rx="5" ry="32" fill="#8fb6bc"/>'
+body += text(810,369,"LS-150",23,"#e2eae2","bold")
+body += path("M 810 380 L 954 380","#bdc8bf",1)
+body += '<path d="M 923 452 L 916 488 Q 929 485 933 462 Z" fill="#92b0a0" stroke="#162d26" stroke-width="2"/>'
+body += path("M 863 534 L 896 534","#64766a",2) + '</g>'
+body += '<g id="ls150-callouts">'
+body += lines(648,283,["Viewfinder:","look through here"],20,INK,27)
+body += path("M 742 321 L 742 350 L 764 375",GREEN,2)
+body += lines(977,283,["Lens:","aim at a patch"],20,INK,27)
+body += path("M 1057 319 L 1068 346 L 1055 368",GREEN,2)
+body += rect(965,492,160,78,"#e4ebdf",LINE,5)
+body += text(1045,483,"Rear LCD (example)",16,MUTED,anchor="middle")
+body += text(983,532,"150",29,INK) + text(1040,555,"cd/m²",19,INK)
+body += path("M 960 441 L 985 492",GREEN,2) + '</g>'
+body += '<g id="measurement-questions">'
+body += text(68,628,"LIGHT ARRIVING AT A PLANE",25,GREEN,"bold")
+body += text(68,665,"How much light reaches this position?",22,INK)
+body += text(648,628,"LIGHT FROM A SELECTED PATCH",25,GREEN,"bold")
+body += text(648,665,"How bright is that surface from here?",22,INK)
+body += lines(68,724,["PLACE the sensor on the measurement plane.","Desk: white sensor faces up.","Eye plane: sensor faces the view direction.","Use: workplane lux or eye illuminance (Ev)."],21,INK,36)
+body += lines(648,724,["AIM the lens; look through the viewfinder.","Keep the central measuring circle on one patch.","LS-150 spot: 1° (not the full viewfinder view).", "Use: spot readings for HDR calibration."],21,INK,36)
+body += text(68,894,"WHITE DIFFUSER → PLACE IT",22,GREEN,"bold")
+body += text(648,894,"LENS + VIEWFINDER → AIM IT",22,GREEN,"bold") + '</g>'
+body += rect(40,958,1120,73,LIME,GREEN,8)
+body += text(600,1003,"Enter cd/m² spot readings into HDR calibration. A lux reading belongs to a different measurement.",23,INK,"bold","middle")
+body += text(44,1074,"Simplified instrument drawings in standard configurations. Display numbers are illustrative, not paired measurements.",20,MUTED)
+save("meter-identification.svg","Which light meter measures what?","Side-by-side original diagrams of the Konica Minolta T-10A illuminance meter, with a white diffuser and lux display, and the LS-150 spot luminance meter, with a lens, viewfinder and cd/m² display. Place the illuminance sensor on the measurement plane; aim the luminance meter at a selected patch for HDR calibration. Example readings are not paired measurements.",1110,body)
+print("Wrote six editable SVG diagrams to", OUT)
 with zipfile.ZipFile(OUT / "lumisnap-editable-diagrams.zip", "w", compression=zipfile.ZIP_DEFLATED) as archive:
     for file in sorted(OUT.glob("*.svg")):
         archive.write(file, file.name)

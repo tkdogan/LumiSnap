@@ -1,0 +1,68 @@
+[
+  {
+    "file": "fisheye-0418.webp",
+    "source": "IMG_0418.JPG",
+    "shutter": "1.3 s",
+    "seconds": 1.3
+  },
+  {
+    "file": "fisheye-0419.webp",
+    "source": "IMG_0419.JPG",
+    "shutter": "1 s",
+    "seconds": 1.0
+  },
+  {
+    "file": "fisheye-0420.webp",
+    "source": "IMG_0420.JPG",
+    "shutter": "0.6 s",
+    "seconds": 0.6
+  },
+  {
+    "file": "fisheye-0421.webp",
+    "source": "IMG_0421.JPG",
+    "shutter": "0.4 s",
+    "seconds": 0.4
+  },
+  {
+    "file": "fisheye-0422.webp",
+    "source": "IMG_0422.JPG",
+    "shutter": "1/4 s",
+    "seconds": 0.25
+  },
+  {
+    "file": "fisheye-0423.webp",
+    "source": "IMG_0423.JPG",
+    "shutter": "1/5 s",
+    "seconds": 0.2
+  },
+  {
+    "file": "fisheye-0424.webp",
+    "source": "IMG_0424.JPG",
+    "shutter": "1/8 s",
+    "seconds": 0.125
+  },
+  {
+    "file": "fisheye-0425.webp",
+    "source": "IMG_0425.JPG",
+    "shutter": "1/13 s",
+    "seconds": 0.07692307692307693
+  },
+  {
+    "file": "fisheye-0426.webp",
+    "source": "IMG_0426.JPG",
+    "shutter": "1/20 s",
+    "seconds": 0.05
+  },
+  {
+    "file": "fisheye-0427.webp",
+    "source": "IMG_0427.JPG",
+    "shutter": "1/30 s",
+    "seconds": 0.03333333333333333
+  },
+  {
+    "file": "fisheye-0428.webp",
+    "source": "IMG_0428.JPG",
+    "shutter": "1/50 s",
+    "seconds": 0.02
+  }
+]

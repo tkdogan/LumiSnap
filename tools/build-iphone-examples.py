@@ -60,7 +60,8 @@ def save(name, array):
 
 for name in ['designtechspace', 'milsteindome']:
     source = SOURCE/name
-    project = json.loads((source/'session.hlab.json').read_text())
+    project_file = next(p for p in (source/'session.lumisnap.json', source/'session.hlab.json') if p.exists())
+    project = json.loads(project_file.read_text())
     rgb = read_hdr(source/project['WorkingImage'])
     h,w,_ = rgb.shape
     assert (w,h) == (project['ImageWidth'], project['ImageHeight'])

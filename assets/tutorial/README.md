@@ -13,11 +13,25 @@ external image host or font is required.
 - `meter-identification.svg`: recognizable Konica Minolta T-10A and LS-150
   instrument drawings, their units, how to position them and their role in HDR work.
 
+Design-question diagrams for `guide.html#design`, built by
+[`tools/build-design-diagrams.py`](../../tools/build-design-diagrams.py) (Python 3 standard library):
+
+- `design-glare.svg`: glare sources in a 180° fisheye view and the DGP scale.
+- `design-brightness.svg`: mean luminance in the 40° horizontal band.
+- `design-contrast.svg`: luminance ratios and the log-luminance histogram.
+- `design-dynamics.svg`: band luminance and DGP from an hourly time-lapse.
+- `design-reflectance.svg`: reflectance from L and E, or against a grey card.
+- `design-validation.svg`: per-region log ratios for a scale model, a rendering and the real space.
+- `design-eye.svg`: vertical eye illuminance from the fisheye and a melanopic estimate.
+
+Values in these seven diagrams are labelled "example": they explain each metric and are
+not measurements. The generator also adds them to the editable-diagram ZIP.
+
 Open an SVG directly in Illustrator or Inkscape. Labels are live Arial text;
 geometry consists of vector paths, shapes and named groups. The photograph in
 `sample-calibration.svg` is an embedded raster image; its markers and text are
 editable vectors. No text is outlined. All SVGs are self-contained.
-The same six SVGs are packaged in `lumisnap-editable-diagrams.zip` for download.
+All thirteen SVGs are packaged in `lumisnap-editable-diagrams.zip` for download.
 
 The optional generator is [`tools/build-tutorial-diagrams.py`](../../tools/build-tutorial-diagrams.py)
 (Python 3 with Pillow).
@@ -101,7 +115,7 @@ these maps use lossless WebP so the mask and palette are preserved. The legend i
 in `luminance-legend.webp`.
 
 `*-points.svg` contains only numbered markers at the normalized coordinates in
-`session.hlab.json`. It overlays the corresponding preview without changing it.
+`session.lumisnap.json`. It overlays the corresponding preview without changing it.
 Table readings and residuals come from `calibration-ios.json`, rounded for display.
 The saved unreliable fractions are 1.2034% and 3.7598%, respectively. RGBE export
 quantization can cause small differences from the app's internal Float32 values.
